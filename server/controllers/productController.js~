@@ -178,6 +178,6 @@ async function updateFeaturedProducts(){
 
     }catch (error){
         console.log("Error in updateFeaturedProducts controller", error.message)
-
+        
     }
 }
