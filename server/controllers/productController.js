@@ -150,7 +150,7 @@ export const getProductsByCategory = async (req, res) => {
 }
 
 // toggle featured status of a product
-export const toggleFeaturedStatus = async (req, res) => {
+export const toggleFeaturedProduct = async (req, res) => {
     try {
         const {id} = req.params;
         const product = await Product.findById(id);
@@ -163,7 +163,7 @@ export const toggleFeaturedStatus = async (req, res) => {
         await updateFeaturedProducts();
         res.json(product);
     }catch (error) {
-        console.log("Error in toggleFeaturedStatus controller", error.message);
+        console.log("Error in toggleFeaturedProduct controller", error.message);
         res.status(500).json({ message: "Server error", error: error.message });
     }
 }
